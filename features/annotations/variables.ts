@@ -33,7 +33,36 @@ const logNumber : ( i : number) => void = ( i : number ) => {
 /*
     1. Function return the annotation
 */
-const json = '{ "x" : "10", "y" : "5" }';
-const coordinates =  JSON.parse(json)
+const json  = '{ "x" : "10", "y" : "5" }';
+const coordinates : { x : number; y : number }=  JSON.parse(json)
+
+
 
 console.log(coordinates)
+
+/*
+    When we declare a variable on one line and initalizate late
+*/
+
+let words = ['red','green','blue '];
+let foundWord : boolean;
+
+for (let i = 0; i <  words.length ; i++){
+    if (words[i] === 'green') {
+        foundWord = true;
+    }
+}
+
+// variable whose type can not be inferred correctly
+
+
+let numbers  = [-10, -1, 10];
+let numberAboveZero : boolean | number = false;
+
+let usersFavoriteMedia;
+
+for ( let i = 1 ; i < numbers.length; i++){
+    if (numbers[i] > 0){
+        numberAboveZero = numbers[i];
+    }
+}
